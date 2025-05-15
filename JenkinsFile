@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven'
+        jdk 'JDK'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout(scm)
+            }
+        }
+
+        stage('Build WAR') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+
+        stage('Deploy WAR') {
+            steps {
+                sh 'java -jar target/My-webapp.war'
+            }
+        }
+
+        }
+    }
+
