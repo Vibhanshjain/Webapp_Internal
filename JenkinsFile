@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git:'master',url='
+                 git 'https://github.com/Vibhanshjain/Webapp_Internal.git'
             }
         }
 
