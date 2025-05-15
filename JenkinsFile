@@ -21,7 +21,7 @@ pipeline {
 
         stage('Deploy WAR') {
             steps {
-                sh 'java -jar target/My-webapp.war'
+                sh 'sudo cp target/My-webapp.war /opt/tomcat/webapps'
             }
         }
 
